@@ -106,6 +106,9 @@ if len(countries_in_subset) != len(countries):
         st.write("No data available for " + ", ".join(missing) + ".")
 
 
+### P3.0 ###
+
+# This code below is from ChatGPT!!!!
 
 # Load the dataset from the URL
 url = 'https://gist.githubusercontent.com/wangqianwen0418/3de32c2d4ce8dafb8d22e8264c03d781/raw/f2d5a4553a28ab3623ac8fd6806ad7fb7f752ac6/cancer_usa.csv'
@@ -130,3 +133,38 @@ bar_chart = alt.Chart(top_cancers_under_5).mark_bar().encode(
 )
 
 bar_chart
+
+url = 'https://gist.githubusercontent.com/wangqianwen0418/3de32c2d4ce8dafb8d22e8264c03d781/raw/f2d5a4553a28ab3623ac8fd6806ad7fb7f752ac6/cancer_usa.csv'
+df = pd.read_csv(url)
+
+# Filter the data for female organ cancers: breast, ovary, and cervix uteri
+female_cancers = df[df['Cancer'].isin(['Malignant neoplasm of breast', 
+                                       'Malignant neoplasm of ovary', 
+                                       'Malignant neoplasm of cervix uteri'])]
+
+# Group by year and cancer type to calculate the total number of deaths each year for these cancers
+female_cancers_by_year = female_cancers.groupby(['Year', 'Cancer'], as_index=False).sum()
+
+# Create a line chart to show year-over-year changes for each cancer type
+line_chart = alt.Chart(female_cancers_by_year).mark_line().encode(
+    x=alt.X('Year:O', title='Year'),
+    y=alt.Y('Age 25-34:Q', title='Number of Deaths', stack=None),
+    color='Cancer:N',
+    tooltip=['Year', 'Cancer', 'Age 25-34']
+).properties(
+    title='Year-over-Year Changes in Female Organ Cancer Rates (Breast, Ovary, Cervix Uteri)',
+    width=600,
+    height=400
+)
+
+line_chart
+
+# P 3.0
+
+# ChatGPT did a pretty good job of creating a visualization for both of my questions. The only code I had to change
+# was that it had written "bar_chart.show()" so I changed it to bar_chart, but otherwise it did a great job.
+# It used sort of the same format as me, except it flipped the X and Y axis and didn't stratify by sex. It also
+# did only the top 10 cancers in order to determine which cancers caused the most deaths.
+
+# Overall I would say that for simpler visualizations ChatGPT can be an effective tool, but I don't trust it to 
+# properly interpret questions nor to consider additional complexities beyond what is specifically asked of it. 
