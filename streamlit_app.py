@@ -104,3 +104,29 @@ if len(countries_in_subset) != len(countries):
     else:
         missing = set(countries) - set(countries_in_subset)
         st.write("No data available for " + ", ".join(missing) + ".")
+
+
+
+# Load the dataset from the URL
+url = 'https://gist.githubusercontent.com/wangqianwen0418/3de32c2d4ce8dafb8d22e8264c03d781/raw/f2d5a4553a28ab3623ac8fd6806ad7fb7f752ac6/cancer_usa.csv'
+df = pd.read_csv(url)
+
+# Filter the dataset for children under 5 years old
+df_under_5 = df[['Cancer', 'Sex', 'Age <5']].groupby(['Cancer'], as_index=False).sum()
+
+# Sort the data by the number of deaths in children under 5 and get the top 10 causes
+top_cancers_under_5 = df_under_5.sort_values(by='Age <5', ascending=False).head(10)
+
+# Create a bar chart of the leading causes of cancer death in children under 5
+bar_chart = alt.Chart(top_cancers_under_5).mark_bar().encode(
+    x=alt.X('Age <5:Q', title='Number of Deaths'),
+    y=alt.Y('Cancer:N', sort='-x', title='Cancer Type'),
+    color='Cancer:N',
+    tooltip=['Cancer', 'Age <5']
+).properties(
+    title='Top 10 Leading Causes of Cancer Deaths in Children Under 5',
+    width=600,
+    height=400
+)
+
+bar_chart.show()
