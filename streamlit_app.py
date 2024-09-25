@@ -49,7 +49,7 @@ subset = df[df["Year"] == year]
 
 ### P2.2 ###
 # replace with st.radio
-sex = st.radio(label = "Sex", options = ["M", "F"], index = 1)
+sex = st.radio(label = "Sex", option = ["M", "F"], index = 1)
 subset = subset[subset["Sex"] == sex]
 ### P2.2 ###
 
@@ -57,7 +57,11 @@ subset = subset[subset["Sex"] == sex]
 ### P2.3 ###
 # replace with st.multiselect
 # (hint: can use current hard-coded values below as as `default` for selector)
-countries = st.multiselect(label = "Countries", options = df["Country"], default = "Turkey")
+countries = st.multiselect(label = "Countries", options=df["Country"], index=["Germany",
+    "Iceland",
+    "Spain",
+    "Sweden",
+    "Thailand"])
 subset = subset[subset["Country"].isin(countries)]
 ### P2.3 ###
 
