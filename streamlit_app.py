@@ -41,7 +41,7 @@ def load_data():
 ### P1.2 ###
 
 
-st.write("## CODE IS WORKING Age-specific cancer mortality rates")
+st.write("## testing code 2 Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
