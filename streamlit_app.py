@@ -88,7 +88,7 @@ ages = [
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country"),
-    color=alt.Color("Rate").scale(type="log"),
+    color=alt.Color("Rate").scale(type="log", domain=(.00001,100000), clamp=True),
     tooltip=["Rate"]
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
