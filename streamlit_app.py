@@ -4,6 +4,7 @@ import streamlit as st
 
 ### P1.2 ###
 
+
 # Move this code into `load_data` function {{
 cancer_df = pd.read_csv("https://raw.githubusercontent.com/hms-dbmi/bmi706-2022/main/cancer_data/cancer_ICD10.csv").melt(  # type: ignore
     id_vars=["Country", "Year", "Cancer", "Sex"],
@@ -40,7 +41,7 @@ def load_data():
 ### P1.2 ###
 
 
-st.write("## Age-specific cancer mortality rates")
+st.write("## CODE IS WORKING Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
