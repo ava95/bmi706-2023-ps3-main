@@ -129,4 +129,4 @@ bar_chart = alt.Chart(top_cancers_under_5).mark_bar().encode(
     height=400
 )
 
-bar_chart.show()
+bar_chart
