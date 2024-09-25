@@ -49,7 +49,7 @@ subset = df[df["Year"] == year]
 
 ### P2.2 ###
 # replace with st.radio
-sex = st.radio(label = "Sex", options = ["M", "F"], index = "F")
+sex = st.radio(label = "Sex", options = ["M", "F"], index = 1)
 subset = subset[subset["Sex"] == sex]
 ### P2.2 ###
 
