@@ -42,14 +42,14 @@ st.write("## testing code 3 Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
-year = st.slider(label="Year", min_value=min(df["Year"]), max_value=max(df["Year"]))
-
+year = st.slider(label="Year", min_value=min(df["Year"]), max_value=max[df["Year"]])
+subset = df[df["Year"] == year]
 ### P2.1 ###
 
 
 ### P2.2 ###
 # replace with st.radio
-sex = "M"
+sex = st.radio(label = "Sex", option = ["M", "F"], index = "F")
 subset = subset[subset["Sex"] == sex]
 ### P2.2 ###
 
