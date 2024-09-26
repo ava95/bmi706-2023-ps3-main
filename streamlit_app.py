@@ -127,7 +127,7 @@ bar_chart = alt.Chart(top_cancers_under_5).mark_bar().encode(
     color='Cancer:N',
     tooltip=['Cancer', 'Age <5']
 ).properties(
-    title='Top 10 Leading Causes of Cancer Deaths in Children Under 5',
+    title='[From ChatGPT] Top 10 Leading Causes of Cancer Deaths in Children Under 5',
     width=600,
     height=400
 )
@@ -152,7 +152,7 @@ line_chart = alt.Chart(female_cancers_by_year).mark_line().encode(
     color='Cancer:N',
     tooltip=['Year', 'Cancer', 'Age 25-34']
 ).properties(
-    title='Year-over-Year Changes in Female Organ Cancer Rates (Breast, Ovary, Cervix Uteri)',
+    title='[From ChatGPT] Year-over-Year Changes in Female Organ Cancer Rates (Breast, Ovary, Cervix Uteri)',
     width=600,
     height=400
 )
