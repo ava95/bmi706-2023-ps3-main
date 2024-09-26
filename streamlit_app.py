@@ -163,8 +163,11 @@ line_chart
 
 # ChatGPT did a pretty good job of creating a visualization for both of my questions. The only code I had to change
 # was that it had written "bar_chart.show()" so I changed it to bar_chart, but otherwise it did a great job.
-# It used sort of the same format as me, except it flipped the X and Y axis and didn't stratify by sex. It also
-# did only the top 10 cancers in order to determine which cancers caused the most deaths.
+# It used essentially the same format as me, with some changes to the axes and titles. It also
+# did only the top 10 cancers in order to determine which cancers caused the most deaths. I don't know how good it is
+# with the interactive stuff but it didn't make the second graph interactive which could have provided
+# interesting information.
 
-# Overall I would say that for simpler visualizations ChatGPT can be an effective tool, but I don't trust it to 
-# properly interpret questions nor to consider additional complexities beyond what is specifically asked of it. 
+# Overall I would say that for simpler visualizations and for the fundamental programming ChatGPT can be an 
+# effective tool, but I don't trust it to properly interpret questions, choose appropriate visaulizations, nor
+#  to consider additional complexities beyond what is specifically asked of it. 
